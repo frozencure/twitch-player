@@ -15,7 +15,12 @@ Because of this I've released this package, which has the following features:
 * types support for Typescript :heavy_check_mark:
 * tested with Angular :heavy_check_mark:
 
-# Getting started
+# Setup
+
+Can be easily installed using `npm`:
+```
+npm i twitch-player
+```
 
 
 # How to use
