@@ -6,47 +6,55 @@ import { TwitchPlayerOptions } from './TwitchPlayerOptions';
  * A TS wrapper for the Twitch interactive media player.
  */
 export class TwitchPlayer {
+  private _player?: Player;
+
   /**
-   * The div HTML element where the player will appear.
+   * Creates a new TwitchPlayer from a Player instance.
+   * @param player The Player instance.
+   * @constructor Creates a new TwitchPlayer instance.
    */
-  get divId(): string {
-    return this._divId;
+  public static FromPlayer(player: Player): TwitchPlayer {
+    const twitchPlayer = new this();
+    twitchPlayer._player = player;
+    return twitchPlayer;
   }
 
   /**
-   * The player optiosn that were provided when the instance was constructed.
+   * Creates a new TwitchPlayer given a div element identifier and some options for the player.
+   * @param divId The div element identiefier where the player will appear.
+   * @param options The player options.
+   * @constructor Creates a new TwitchPlayer instance.
    */
-  get twitchPlayerOptions(): TwitchPlayerOptions {
-    return this._twitchPlayerOptions;
-  }
-
-  private readonly _player: Player;
-
-  private readonly _divId!: string;
-
-  private readonly _twitchPlayerOptions!: TwitchPlayerOptions;
-
-  /**
-   * Creates a new TwitchPlayer instance.
-   * @param divId The div HTML element where the player will appear.
-   * @param options The player initialization options.
-   */
-  constructor(divId: string, options: TwitchPlayerOptions) {
-    this._player = new Player(divId, options);
+  public static FromOptions(divId: string, options: TwitchPlayerOptions): TwitchPlayer {
+    const twitchPlayer = new this();
+    try {
+      if ((<any>window).Player && (<any>window).Twitch.Player) {
+        twitchPlayer._player = new (<any>window).Twitch.Player(divId, options);
+      } else {
+        console.warn('Player was created using the static file, from inside the package. ' +
+          'Please add the Twitch.Embed script to *index.html*, if you want to download the script directly from Twitch.')
+        twitchPlayer._player = new Player(divId, options);
+      }
+    } catch (e) {
+      console.exception('Player was created using the static file, from inside the package. ' +
+        'Please add the Twitch.Player script to *index.html*, if you want to download the script directly from Twitch.', e)
+      twitchPlayer._player = new Player(divId, options);
+    }
+    return twitchPlayer;
   }
 
   /**
    * Pauses the player.
    */
   public pause(): void {
-    this._player.pause();
+    this._player?.pause();
   }
 
   /**
    * Begins playing the specified video.
    */
   public play(): void {
-    this._player.play();
+    this._player?.play();
   }
 
   /**
@@ -54,7 +62,7 @@ export class TwitchPlayer {
    * @param timestamp The specified timestamp (in seconds).
    */
   public seek(timestamp: number): void {
-    this._player.seek(timestamp);
+    this._player?.seek(timestamp);
   }
 
   /**
@@ -62,7 +70,7 @@ export class TwitchPlayer {
    * @param channel The selected channel.
    */
   public setChannel(channel: string): void {
-    this._player.setChannel(channel);
+    this._player?.setChannel(channel);
   }
 
   /**
@@ -74,7 +82,7 @@ export class TwitchPlayer {
    * @param videoId The identifier for the video.
    */
   setCollection(collectionId: string, videoId?: string): void {
-    this._player.setCollection(collectionId, videoId);
+    this._player?.setCollection(collectionId, videoId);
   }
 
   /**
@@ -82,7 +90,7 @@ export class TwitchPlayer {
    * @param quality The quality to be set.
    */
   public setQuality(quality: string): void {
-    this._player.setQuality(quality);
+    this._player?.setQuality(quality);
   }
 
   /**
@@ -91,14 +99,14 @@ export class TwitchPlayer {
    * @param timestamp The spot where the playback will be started (in seconds).
    */
   public setVideo(videoID: string, timestamp: number): void {
-    this._player.setVideo(videoID, timestamp);
+    this._player?.setVideo(videoID, timestamp);
   }
 
   /**
    * Returns true if the player is muted; otherwise, false.
    */
-  public getMuted(): boolean {
-    return this._player.getMuted();
+  public getMuted(): boolean | undefined {
+    return this._player?.getMuted();
   }
 
   /**
@@ -106,14 +114,14 @@ export class TwitchPlayer {
    * @param muted If true, player will be muted. Otherwise, it will be unmuted.
    */
   public setMuted(muted: boolean): void {
-    this._player.setMuted(muted);
+    this._player?.setMuted(muted);
   }
 
   /**
    * Returns the volume level, a value between 0.0 and 1.0.
    */
-  public getVolume(): number {
-    return this._player.getVolume();
+  public getVolume(): number | undefined {
+    return this._player?.getVolume();
   }
 
   /**
@@ -121,63 +129,63 @@ export class TwitchPlayer {
    * @param volumeLevel A number between 0 and 1.
    */
   public setVolume(volumeLevel: number): void {
-    this._player.setVolume(volumeLevel);
+    this._player?.setVolume(volumeLevel);
   }
 
   /**
    * Returns the channel’s name. Works only for live streams, not VODs.
    */
-  public getChannel(): string {
-    return this._player.getChannel();
+  public getChannel(): string | undefined {
+    return this._player?.getChannel();
   }
 
   /**
    * Returns the current video’s timestamp, in seconds. Works only for VODs, not live streams.
    */
-  public getCurrentTime(): number {
-    return this._player.getCurrentTime();
+  public getCurrentTime(): number | undefined {
+    return this._player?.getCurrentTime();
   }
 
   /**
    * Returns the duration of the video, in seconds. Works only for VODs,not live streams.
    */
-  public getDuration(): number {
-    return this._player.getDuration();
+  public getDuration(): number | undefined {
+    return this._player?.getDuration();
   }
 
   /**
    * Returns true if the live stream or VOD has ended; otherwise, false.
    */
-  public getEnded(): boolean {
-    return this._player.getEnded();
+  public getEnded(): boolean | undefined {
+    return this._player?.getEnded();
   }
 
   /**
    * Returns the available video qualities. For example, chunked (pass-through of the original source).
    */
-  public getQualities(): string[] {
-    return this._player.getQualities();
+  public getQualities(): string[] | undefined {
+    return this._player?.getQualities();
   }
 
   /**
    * Returns the current quality of video playback.
    */
-  public getQuality(): string {
-    return this._player.getQuality();
+  public getQuality(): string | undefined {
+    return this._player?.getQuality();
   }
 
   /**
    * Returns the video ID. Works only for VODs, not live streams.
    */
-  public getVideo(): string {
-    return this._player.getVideo();
+  public getVideo(): string | undefined {
+    return this._player?.getVideo();
   }
 
   /**
    * Returns true if the video is paused; otherwise, false. Buffering or seeking is considered playing.
    */
-  public isPaused(): boolean {
-    return this._player.isPaused();
+  public isPaused(): boolean | undefined {
+    return this._player?.isPaused();
   }
 
   /**
@@ -189,6 +197,6 @@ export class TwitchPlayer {
     event: TwitchPlayerEvent,
     callback: () => void
   ): void {
-    this._player.addEventListener(event.toString(), callback);
+    this._player?.addEventListener(event.toString(), callback);
   }
 }

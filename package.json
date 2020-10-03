@@ -15,7 +15,7 @@
     "npm-package"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.json & copyfiles -u 1 \"src/**/Player.*\" build/main",
+    "build": "tsc -p tsconfig.json & copyfiles -u 1 \"src/lib/everything/video/Player.*\" build/main & copyfiles -u 1 \"src/lib/everything/Embed.*\" build/main ",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
     "fix:lint": "eslint src --ext .ts --fix",
