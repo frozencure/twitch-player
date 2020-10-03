@@ -67,7 +67,101 @@
 				<a href="#twitch-player" id="twitch-player" style="color: inherit; text-decoration: none;">
 					<h1>twitch-player</h1>
 				</a>
-				<p>Description</p>
+				<a href="#about" id="about" style="color: inherit; text-decoration: none;">
+					<h1>About</h1>
+				</a>
+				<p><em>twitch-player</em> is a Typescript <code>npm</code> package that provides an easy interaction with the
+				Twitch embeddable, interactive VOD and Clips player.</p>
+				<p>Currently, the Twitch Development team offers only Javacript support for embedding an interactive
+					media player (<a href="https://dev.twitch.tv/docs/embed/video-and-clips#interactive-frames-for-live-streams-and-vods">see this link</a>).
+					When developing Web apps using Typescript (for example in Angular)
+				it is pretty cumbersome to work with the provided script, without any types support.</p>
+				<p>Because of this I&#39;ve released this package, which has the following features:</p>
+				<ul>
+					<li>easy setup using <code>npm install</code> :heavy_check_mark:</li>
+					<li>types support for Typescript :heavy_check_mark:</li>
+					<li>tested with Angular :heavy_check_mark:</li>
+				</ul>
+				<a href="#setup" id="setup" style="color: inherit; text-decoration: none;">
+					<h1>Setup</h1>
+				</a>
+				<a href="#npm-install" id="npm-install" style="color: inherit; text-decoration: none;">
+					<h2>npm install</h2>
+				</a>
+				<p>Can be easily installed using <code>npm</code>:</p>
+				<pre><code><span class="hljs-built_in">npm</span> i twitch-player</code></pre>
+				<a href="#updating-indexhtml-optional" id="updating-indexhtml-optional" style="color: inherit; text-decoration: none;">
+					<h2>Updating <code>index.html</code> (optional)</h2>
+				</a>
+				<p>Currently, both JS scripts for the <code>Twitch.Player</code> and <code>Twitch.Embed</code> are static files inside package.
+				If you want to use the official Twitch versions you will have to append the following to your <code>index.html</code> file:</p>
+				<pre><code><span class="hljs-comment">&lt;!-- Twitch script for the Twitch.Embed object --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://embed.twitch.tv/embed/v1.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Twitch script for the Twitch.Player object --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>= <span class="hljs-string">&quot;https://player.twitch.tv/js/embed/v1.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+				<a href="#how-to-use" id="how-to-use" style="color: inherit; text-decoration: none;">
+					<h1>How to use</h1>
+				</a>
+				<a href="#creating-a-new-player-instance" id="creating-a-new-player-instance" style="color: inherit; text-decoration: none;">
+					<h2>Creating a new player instance</h2>
+				</a>
+				<pre><code><span class="hljs-keyword">const</span> player = TwitchPlayer.FromOptions(<span class="hljs-string">&#x27;twitch-player&#x27;</span>, {
+        <span class="hljs-built_in">width</span>: <span class="hljs-number">1280</span>,
+        <span class="hljs-built_in">height</span>: <span class="hljs-number">720</span>,
+        video: <span class="hljs-string">&#x27;&lt;video ID here&gt;&#x27;</span>
+      });</code></pre>
+				<ul>
+					<li><p>In this example, the first argument of the constructor (<code>twitch-player</code>),
+						represents the identifier of the <code>div</code> element where the player will be displayed.</p>
+					</li>
+					<li><p>The second argument holds all the initialization options for the player,
+						including the width, height and video that will be played</p>
+					</li>
+					<li><p>For more information please <a href="https://dev.twitch.tv/docs/embed/video-and-clips#interactive-frames-for-live-streams-and-vods">visit the Twitch Developer Reference</a>.</p>
+					</li>
+				</ul>
+				<a href="#creating-a-new-embed-instance" id="creating-a-new-embed-instance" style="color: inherit; text-decoration: none;">
+					<h2>Creating a new Embed instance</h2>
+				</a>
+				<pre><code><span class="hljs-keyword">const</span> embed = <span class="hljs-keyword">new</span> TwitchEmbed(<span class="hljs-string">&#x27;twitch-player&#x27;</span>, {
+        <span class="hljs-built_in">width</span>: <span class="hljs-number">1280</span>,
+        <span class="hljs-built_in">height</span>: <span class="hljs-number">720</span>,
+        channel: <span class="hljs-string">&#x27;&lt;channel ID here&gt;&#x27;</span>,
+        layout: TwitchEmbedLayout.VIDEO_WITH_CHAT
+      });</code></pre>
+				<ul>
+					<li><p>The <code>TwitchEmbed</code> object can be used to embed everything, including the chat.
+						It holds a <code>TwitchPlayer</code> instance that can be accessed by calling <code>embed.getPlayer()</code></p>
+					</li>
+					<li><p>For more information please <a href="https://dev.twitch.tv/docs/embed/everything#usage">visit the Twitch Developer Reference</a></p>
+					</li>
+				</ul>
+				<a href="#interacting-with-the-player" id="interacting-with-the-player" style="color: inherit; text-decoration: none;">
+					<h2>Interacting with the player</h2>
+				</a>
+				<ul>
+					<li>Skipping 10 seconds forward: <code>player.seek(player.getCurrentTime() + 10)</code></li>
+					<li>Pausing: <code>player.pause()</code></li>
+					<li>Changing volume: <code>player.setVolume(0.7)</code></li>
+				</ul>
+				<a href="#reacting-to-player-events" id="reacting-to-player-events" style="color: inherit; text-decoration: none;">
+					<h2>Reacting to player events</h2>
+				</a>
+				<pre><code>player.addEventListener(TwitchPlayerEvent.PAUSE, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;paused&#x27;</span>);
+      });
+player.addEventListener(TwitchPlayerEvent.PLAY, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;started&#x27;</span>);
+      });</code></pre>
+				<a href="#documentation" id="documentation" style="color: inherit; text-decoration: none;">
+					<h1>Documentation</h1>
+				</a>
+				<p>The documentation for all public classes, members and functions <a href="https://frozencure.github.io/twitch-player/">can be found here</a>.</p>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h1>License</h1>
+				</a>
+				<p>This project is available under the MIT license. See the LICENSE file for more information.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -81,13 +175,28 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum">
+						<a href="enums/twitchembedevent.html" class="tsd-kind-icon">Twitch<wbr>Embed<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/twitchembedlayout.html" class="tsd-kind-icon">Twitch<wbr>Embed<wbr>Layout</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/twitchembedtheme.html" class="tsd-kind-icon">Twitch<wbr>Embed<wbr>Theme</a>
+					</li>
+					<li class=" tsd-kind-enum">
 						<a href="enums/twitchplayerevent.html" class="tsd-kind-icon">Twitch<wbr>Player<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/twitchembed.html" class="tsd-kind-icon">Twitch<wbr>Embed</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/twitchplayer.html" class="tsd-kind-icon">Twitch<wbr>Player</a>
 					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/twitchplayeroptions.html" class="tsd-kind-icon">Twitch<wbr>Player<wbr>Options</a>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/twitchembedoptions.html" class="tsd-kind-icon">Twitch<wbr>Embed<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/twitchplayeroptions.html" class="tsd-kind-icon">Twitch<wbr>Player<wbr>Options</a>
 					</li>
 				</ul>
 			</nav>
@@ -100,11 +209,16 @@
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
 			</ul>
 		</div>
 	</div>
