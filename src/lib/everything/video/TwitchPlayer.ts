@@ -1,3 +1,4 @@
+import { PlaybackStatistics } from './PlaybackStatistics';
 import { Player } from './Player';
 import { TwitchPlayerEvent } from './TwitchPlayerEvent';
 import { TwitchPlayerOptions } from './TwitchPlayerOptions';
@@ -32,15 +33,29 @@ export class TwitchPlayer {
         twitchPlayer._player = new (<any>window).Twitch.Player(divId, options);
       } else {
         console.warn('Player was created using the static file, from inside the package. ' +
-          'Please add the Twitch.Embed script to *index.html*, if you want to download the script directly from Twitch.')
+          'Please add the Twitch.Embed script to *index.html*, if you want to download the script directly from Twitch.');
         twitchPlayer._player = new Player(divId, options);
       }
     } catch (e) {
       console.exception('Player was created using the static file, from inside the package. ' +
-        'Please add the Twitch.Player script to *index.html*, if you want to download the script directly from Twitch.', e)
+        'Please add the Twitch.Player script to *index.html*, if you want to download the script directly from Twitch.', e);
       twitchPlayer._player = new Player(divId, options);
     }
     return twitchPlayer;
+  }
+
+  /**
+   * Disables the captions for the content that is currently playing.
+   */
+  public disableCaptions(): void {
+    this._player?.disableCaptions();
+  }
+
+  /**
+   * Enables the captions for the content that is currently playing.
+   */
+  public enableCaptions(): void {
+    this._player?.enableCaptions();
   }
 
   /**
@@ -71,6 +86,22 @@ export class TwitchPlayer {
    */
   public setChannel(channel: string): void {
     this._player?.setChannel(channel);
+  }
+
+  /**
+   * Sets the channel to be played.
+   * @param channelId The selected channel's identifier.
+   */
+  public setChannelId(channelId: string): void {
+    this._player?.setChannelId(channelId);
+  }
+
+  /**
+   * Retrieves the playback statistics for this player.
+   * The statistics contain information such as video FPS, resolution, latency and dropped frames.
+   */
+  public getPlaybackStatistics(): PlaybackStatistics | undefined {
+    return this._player?.getPlaybackStats();
   }
 
   /**
@@ -140,6 +171,13 @@ export class TwitchPlayer {
   }
 
   /**
+   * Returns the channel’s identifier. Works only for live streams, not VODs.
+   */
+  getChannelId(): string | undefined {
+    return this._player?.getChannelId();
+  }
+
+  /**
    * Returns the current video’s timestamp, in seconds. Works only for VODs, not live streams.
    */
   public getCurrentTime(): number | undefined {
@@ -186,6 +224,13 @@ export class TwitchPlayer {
    */
   public isPaused(): boolean | undefined {
     return this._player?.isPaused();
+  }
+
+  /**
+   * Returns the name of the collection currently being played.
+   */
+  public getCollection(): string | undefined {
+    return this._player?.getCollection();
   }
 
   /**
