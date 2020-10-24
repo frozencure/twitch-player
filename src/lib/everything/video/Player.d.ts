@@ -1,7 +1,25 @@
+import { PlaybackStatistics } from './PlaybackStatistics';
 import { TwitchPlayerOptions } from './TwitchPlayerOptions';
 
 export class Player {
+
   constructor(divId: string, options: TwitchPlayerOptions);
+
+  /**
+   * Disables the captions for the content that is currently playing.
+   */
+  disableCaptions(): void;
+
+  /**
+   * Enables the captions for the content that is currently playing.
+   */
+  enableCaptions(): void;
+
+  /**
+   * Retrieves the playback statistics for this player.
+   * The statistics contain information such as video FPS, resolution, latency and dropped frames.
+   */
+  getPlaybackStats(): PlaybackStatistics;
 
   /**
    * Pauses the player.
@@ -26,6 +44,12 @@ export class Player {
   setChannel(channel: string): void;
 
   /**
+   * Sets the channel to be played.
+   * @param channelId The selected channel's identifier.
+   */
+  setChannelId(channelId: string): void;
+
+  /**
    * Sets the collection to be played.
    * Optionally also specifies the video within the collection, from which to start playback.
    * If a video ID is not provided here or the specified video is not part of the collection,
@@ -36,6 +60,11 @@ export class Player {
   setCollection(collectionId: string, videoId?: string): void;
 
   /**
+   * Returns the name of the collection currently being played.
+   */
+  getCollection(): string | undefined;
+
+  /**
    * Sets the quality of the video. quality should be a string value returned by getQualities.
    * @param quality The quality to be set.
    */
@@ -43,10 +72,10 @@ export class Player {
 
   /**
    * Sets the video to be played to be played and starts playback at timestamp (in seconds).
-   * @param videoID The identifier of the video to be played.
+   * @param videoId The identifier of the video to be played.
    * @param timestamp The spot where the playback will be started (in seconds).
    */
-  setVideo(videoID: string, timestamp: number): void;
+  setVideo(videoId: string, timestamp: number): void;
 
   /**
    * Returns true if the player is muted; otherwise, false.
@@ -73,7 +102,7 @@ export class Player {
   /**
    * Returns the channel’s name. Works only for live streams, not VODs.
    */
-  getChannel(): string;
+  getChannel(): string | undefined;
 
   /**
    * Returns the current video’s timestamp, in seconds. Works only for VODs, not live streams.
@@ -103,12 +132,17 @@ export class Player {
   /**
    * Returns the video ID. Works only for VODs, not live streams.
    */
-  getVideo(): string;
+  getVideo(): string | undefined;
 
   /**
    * Returns true if the video is paused; otherwise, false. Buffering or seeking is considered playing.
    */
   isPaused(): boolean;
+
+  /**
+   * Returns the channel’s identifier. Works only for live streams, not VODs.
+   */
+  getChannelId(): string | undefined;
 
   /**
    * Adds an event listener for the given event.

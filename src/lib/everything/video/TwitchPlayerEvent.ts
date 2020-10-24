@@ -3,6 +3,14 @@
  */
 export enum TwitchPlayerEvent {
   /**
+   * The video player is ready for API commands.
+   */
+  VIDEO_READY = 'video.ready',
+  /**
+   * The video started playing. This callback receives an object with a sessionId property.
+   */
+  VIDEO_PLAY = 'video.play',
+  /**
    * Video or stream ends.
    */
   ENDED = 'ended',
@@ -33,5 +41,5 @@ export enum TwitchPlayerEvent {
   /**
    * Player is ready to accept function calls.
    */
-  READY = 'ready',
+  READY = 'ready'
 }
