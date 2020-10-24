@@ -95,11 +95,16 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#disablecaptions" class="tsd-kind-icon">disable<wbr>Captions</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#enablecaptions" class="tsd-kind-icon">enable<wbr>Captions</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#getchannel" class="tsd-kind-icon">get<wbr>Channel</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#getchannelid" class="tsd-kind-icon">get<wbr>Channel<wbr>Id</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#getcollection" class="tsd-kind-icon">get<wbr>Collection</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#getcurrenttime" class="tsd-kind-icon">get<wbr>Current<wbr>Time</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#getduration" class="tsd-kind-icon">get<wbr>Duration</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#getended" class="tsd-kind-icon">get<wbr>Ended</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#getmuted" class="tsd-kind-icon">get<wbr>Muted</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#getplaybackstatistics" class="tsd-kind-icon">get<wbr>Playback<wbr>Statistics</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#getqualities" class="tsd-kind-icon">get<wbr>Qualities</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#getquality" class="tsd-kind-icon">get<wbr>Quality</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#getvideo" class="tsd-kind-icon">get<wbr>Video</a></li>
@@ -109,6 +114,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#play" class="tsd-kind-icon">play</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#seek" class="tsd-kind-icon">seek</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#setchannel" class="tsd-kind-icon">set<wbr>Channel</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#setchannelid" class="tsd-kind-icon">set<wbr>Channel<wbr>Id</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#setcollection" class="tsd-kind-icon">set<wbr>Collection</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#setmuted" class="tsd-kind-icon">set<wbr>Muted</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="twitchplayer.html#setquality" class="tsd-kind-icon">set<wbr>Quality</a></li>
@@ -129,7 +135,7 @@
 					<div class="tsd-signature tsd-kind-icon">_player<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Player</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L9">lib/everything/video/TwitchPlayer.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L11">lib/everything/video/TwitchPlayer.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -146,7 +152,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L196">lib/everything/video/TwitchPlayer.ts:196</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L245">lib/everything/video/TwitchPlayer.ts:245</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -186,6 +192,60 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="disablecaptions" class="tsd-anchor"></a>
+					<h3>disable<wbr>Captions</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">disable<wbr>Captions<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L52">lib/everything/video/TwitchPlayer.ts:52</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Disables the captions for the content that is currently playing.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>deprecated</dt>
+									<dd><p>Use with caution, not inculded in the official Twitch documentation.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="enablecaptions" class="tsd-anchor"></a>
+					<h3>enable<wbr>Captions</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">enable<wbr>Captions<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L60">lib/everything/video/TwitchPlayer.ts:60</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Enables the captions for the content that is currently playing.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>deprecated</dt>
+									<dd><p>Use with caution, not inculded in the official Twitch documentation.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getchannel" class="tsd-anchor"></a>
 					<h3>get<wbr>Channel</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -195,12 +255,56 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L138">lib/everything/video/TwitchPlayer.ts:138</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L173">lib/everything/video/TwitchPlayer.ts:173</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Returns the channel’s name. Works only for live streams, not VODs.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getchannelid" class="tsd-anchor"></a>
+					<h3>get<wbr>Channel<wbr>Id</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Channel<wbr>Id<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L180">lib/everything/video/TwitchPlayer.ts:180</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the channel’s identifier. Works only for live streams, not VODs.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getcollection" class="tsd-anchor"></a>
+					<h3>get<wbr>Collection</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Collection<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L236">lib/everything/video/TwitchPlayer.ts:236</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the name of the collection currently being played.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
@@ -217,7 +321,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L145">lib/everything/video/TwitchPlayer.ts:145</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L187">lib/everything/video/TwitchPlayer.ts:187</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -239,7 +343,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L152">lib/everything/video/TwitchPlayer.ts:152</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L194">lib/everything/video/TwitchPlayer.ts:194</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -261,7 +365,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L159">lib/everything/video/TwitchPlayer.ts:159</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L201">lib/everything/video/TwitchPlayer.ts:201</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -283,7 +387,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L108">lib/everything/video/TwitchPlayer.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L143">lib/everything/video/TwitchPlayer.ts:143</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -296,16 +400,44 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getqualities" class="tsd-anchor"></a>
-					<h3>get<wbr>Qualities</h3>
+					<a name="getplaybackstatistics" class="tsd-anchor"></a>
+					<h3>get<wbr>Playback<wbr>Statistics</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Qualities<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Playback<wbr>Statistics<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/playbackstatistics.html" class="tsd-signature-type">PlaybackStatistics</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L166">lib/everything/video/TwitchPlayer.ts:166</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L107">lib/everything/video/TwitchPlayer.ts:107</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Retrieves the playback statistics for this player.
+									The statistics contain information such as video FPS, resolution, latency and dropped frames.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>deprecated</dt>
+									<dd><p>Use with caution, not inculded in the official Twitch documentation.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/playbackstatistics.html" class="tsd-signature-type">PlaybackStatistics</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getqualities" class="tsd-anchor"></a>
+					<h3>get<wbr>Qualities</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Qualities<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/quality.html" class="tsd-signature-type">Quality</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L208">lib/everything/video/TwitchPlayer.ts:208</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -313,7 +445,7 @@
 									<p>Returns the available video qualities. For example, chunked (pass-through of the original source).</p>
 								</div>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/quality.html" class="tsd-signature-type">Quality</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -327,7 +459,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L173">lib/everything/video/TwitchPlayer.ts:173</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L215">lib/everything/video/TwitchPlayer.ts:215</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -349,7 +481,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L180">lib/everything/video/TwitchPlayer.ts:180</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L222">lib/everything/video/TwitchPlayer.ts:222</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -371,7 +503,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L123">lib/everything/video/TwitchPlayer.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L158">lib/everything/video/TwitchPlayer.ts:158</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -393,7 +525,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L187">lib/everything/video/TwitchPlayer.ts:187</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L229">lib/everything/video/TwitchPlayer.ts:229</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -415,7 +547,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L49">lib/everything/video/TwitchPlayer.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L67">lib/everything/video/TwitchPlayer.ts:67</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -437,7 +569,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L56">lib/everything/video/TwitchPlayer.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L74">lib/everything/video/TwitchPlayer.ts:74</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -459,7 +591,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L64">lib/everything/video/TwitchPlayer.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L82">lib/everything/video/TwitchPlayer.ts:82</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -490,7 +622,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L72">lib/everything/video/TwitchPlayer.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L90">lib/everything/video/TwitchPlayer.ts:90</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -512,6 +644,37 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setchannelid" class="tsd-anchor"></a>
+					<h3>set<wbr>Channel<wbr>Id</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Channel<wbr>Id<span class="tsd-signature-symbol">(</span>channelId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L98">lib/everything/video/TwitchPlayer.ts:98</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the channel to be played.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>channelId: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The selected channel&#39;s identifier.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="setcollection" class="tsd-anchor"></a>
 					<h3>set<wbr>Collection</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -521,7 +684,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L84">lib/everything/video/TwitchPlayer.ts:84</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L119">lib/everything/video/TwitchPlayer.ts:119</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -561,7 +724,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L116">lib/everything/video/TwitchPlayer.ts:116</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L151">lib/everything/video/TwitchPlayer.ts:151</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -592,7 +755,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L92">lib/everything/video/TwitchPlayer.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L127">lib/everything/video/TwitchPlayer.ts:127</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -623,7 +786,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L101">lib/everything/video/TwitchPlayer.ts:101</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L136">lib/everything/video/TwitchPlayer.ts:136</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -660,7 +823,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L131">lib/everything/video/TwitchPlayer.ts:131</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L166">lib/everything/video/TwitchPlayer.ts:166</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -691,7 +854,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L28">lib/everything/video/TwitchPlayer.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L30">lib/everything/video/TwitchPlayer.ts:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -728,7 +891,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/92d9cdc/src/lib/everything/video/TwitchPlayer.ts#L16">lib/everything/video/TwitchPlayer.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/frozencure/twitch-player/blob/2f1e2d3/src/lib/everything/video/TwitchPlayer.ts#L18">lib/everything/video/TwitchPlayer.ts:18</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -762,9 +925,6 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum">
-						<a href="../enums/twitchembedevent.html" class="tsd-kind-icon">Twitch<wbr>Embed<wbr>Event</a>
-					</li>
-					<li class=" tsd-kind-enum">
 						<a href="../enums/twitchembedlayout.html" class="tsd-kind-icon">Twitch<wbr>Embed<wbr>Layout</a>
 					</li>
 					<li class=" tsd-kind-enum">
@@ -788,7 +948,19 @@
 								<a href="twitchplayer.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="twitchplayer.html#disablecaptions" class="tsd-kind-icon">disable<wbr>Captions</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="twitchplayer.html#enablecaptions" class="tsd-kind-icon">enable<wbr>Captions</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="twitchplayer.html#getchannel" class="tsd-kind-icon">get<wbr>Channel</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="twitchplayer.html#getchannelid" class="tsd-kind-icon">get<wbr>Channel<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="twitchplayer.html#getcollection" class="tsd-kind-icon">get<wbr>Collection</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="twitchplayer.html#getcurrenttime" class="tsd-kind-icon">get<wbr>Current<wbr>Time</a>
@@ -801,6 +973,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="twitchplayer.html#getmuted" class="tsd-kind-icon">get<wbr>Muted</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="twitchplayer.html#getplaybackstatistics" class="tsd-kind-icon">get<wbr>Playback<wbr>Statistics</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="twitchplayer.html#getqualities" class="tsd-kind-icon">get<wbr>Qualities</a>
@@ -830,6 +1005,9 @@
 								<a href="twitchplayer.html#setchannel" class="tsd-kind-icon">set<wbr>Channel</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="twitchplayer.html#setchannelid" class="tsd-kind-icon">set<wbr>Channel<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="twitchplayer.html#setcollection" class="tsd-kind-icon">set<wbr>Collection</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -855,10 +1033,19 @@
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface">
+						<a href="../interfaces/playbackstatistics.html" class="tsd-kind-icon">Playback<wbr>Statistics</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/quality.html" class="tsd-kind-icon">Quality</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="../interfaces/twitchembedoptions.html" class="tsd-kind-icon">Twitch<wbr>Embed<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/twitchplayeroptions.html" class="tsd-kind-icon">Twitch<wbr>Player<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/videostatistics.html" class="tsd-kind-icon">Video<wbr>Statistics</a>
 					</li>
 				</ul>
 			</nav>
