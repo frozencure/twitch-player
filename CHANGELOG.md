@@ -4,11 +4,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [2.0.2](https://github.com/frozencure/twitch-player/compare/v2.0.1...v2.0.2) (2020-10-24)
 
-* Add type for `Quality`
-* Mark undocumented methods with `@deprecated` tag
-* Remove left-over, unused build files
-* Fix `Twitch.Player` wrong location script check
-
 ### [2.0.1](https://github.com/frozencure/twitch-player/compare/v2.0.0...v2.0.1) (2020-10-24)
 
 * Add missing events to `Twitch.Embed`
