@@ -1,7 +1,8 @@
-import { PlaybackStatistics } from './PlaybackStatistics';
+import { PlaybackStatistics } from '../model/PlaybackStatistics';
 import { Player } from './Player';
 import { TwitchPlayerEvent } from './TwitchPlayerEvent';
 import { TwitchPlayerOptions } from './TwitchPlayerOptions';
+import { Quality } from '../model/Quality';
 
 /**
  * A TS wrapper for the Twitch interactive media player.
@@ -46,6 +47,7 @@ export class TwitchPlayer {
 
   /**
    * Disables the captions for the content that is currently playing.
+   * @deprecated Use with caution, not inculded in the official Twitch documentation.
    */
   public disableCaptions(): void {
     this._player?.disableCaptions();
@@ -53,6 +55,7 @@ export class TwitchPlayer {
 
   /**
    * Enables the captions for the content that is currently playing.
+   * @deprecated Use with caution, not inculded in the official Twitch documentation.
    */
   public enableCaptions(): void {
     this._player?.enableCaptions();
@@ -99,6 +102,7 @@ export class TwitchPlayer {
   /**
    * Retrieves the playback statistics for this player.
    * The statistics contain information such as video FPS, resolution, latency and dropped frames.
+   * @deprecated Use with caution, not inculded in the official Twitch documentation.
    */
   public getPlaybackStatistics(): PlaybackStatistics | undefined {
     return this._player?.getPlaybackStats();
@@ -201,7 +205,7 @@ export class TwitchPlayer {
   /**
    * Returns the available video qualities. For example, chunked (pass-through of the original source).
    */
-  public getQualities(): string[] | undefined {
+  public getQualities(): Quality[] | undefined {
     return this._player?.getQualities();
   }
 

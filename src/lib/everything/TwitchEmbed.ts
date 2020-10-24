@@ -1,6 +1,7 @@
 import { Embed } from './Embed';
 import { TwitchEmbedOptions } from './TwitchEmbedOptions';
-import { PlaybackStatistics } from './video/PlaybackStatistics';
+import { PlaybackStatistics } from './model/PlaybackStatistics';
+import { Quality } from './model/Quality';
 import { TwitchPlayer } from './video/TwitchPlayer';
 import { TwitchPlayerEvent } from './video/TwitchPlayerEvent';
 
@@ -72,6 +73,7 @@ export class TwitchEmbed {
 
   /**
    * Disables the captions for the content that is currently playing.
+   * @deprecated Use with caution, not inculded in the official Twitch documentation.
    */
   public disableCaptions(): void {
     this._embed.disableCaptions();
@@ -79,6 +81,7 @@ export class TwitchEmbed {
 
   /**
    * Enables the captions for the content that is currently playing.
+   * @deprecated Use with caution, not inculded in the official Twitch documentation.
    */
   public enableCaptions(): void {
     this._embed.enableCaptions();
@@ -87,6 +90,7 @@ export class TwitchEmbed {
   /**
    * Retrieves the playback statistics for this player.
    * The statistics contain information such as video FPS, resolution, latency and dropped frames.
+   * @deprecated Use with caution, not inculded in the official Twitch documentation.
    */
   public getPlaybackStatistics(): PlaybackStatistics {
     return this._embed.getPlaybackStats();
@@ -242,7 +246,7 @@ export class TwitchEmbed {
   /**
    * Returns the available video qualities. For example, chunked (pass-through of the original source).
    */
-  public getQualities(): string[] {
+  public getQualities(): Quality[] {
     return this._embed.getQualities();
   }
 
