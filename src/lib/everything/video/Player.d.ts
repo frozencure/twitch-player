@@ -1,5 +1,6 @@
-import { PlaybackStatistics } from './PlaybackStatistics';
+import { PlaybackStatistics } from '../model/PlaybackStatistics';
 import { TwitchPlayerOptions } from './TwitchPlayerOptions';
+import { Quality } from '../model/Quality';
 
 export class Player {
 
@@ -122,7 +123,7 @@ export class Player {
   /**
    * Returns the available video qualities. For example, chunked (pass-through of the original source).
    */
-  getQualities(): string[];
+  getQualities(): Quality[];
 
   /**
    * Returns the current quality of video playback.

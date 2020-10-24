@@ -1,6 +1,7 @@
-import { PlaybackStatistics } from './video/PlaybackStatistics';
+import { PlaybackStatistics } from './model/PlaybackStatistics';
 import { TwitchEmbedOptions } from './TwitchEmbedOptions';
 import { Player } from './video/Player';
+import { Quality } from './model/Quality';
 
 export class Embed {
 
@@ -60,7 +61,7 @@ export class Embed {
   /**
    * Returns the available video qualities. For example, chunked (pass-through of the original source).
    */
-  getQualities(): string[];
+  getQualities(): Quality[];
 
   /**
    * Returns the current quality of video playback.
