@@ -1,8 +1,9 @@
 import { PlaybackStatistics } from '../model/PlaybackStatistics';
+import { Quality } from '../model/Quality';
+
 import { Player } from './Player';
 import { TwitchPlayerEvent } from './TwitchPlayerEvent';
 import { TwitchPlayerOptions } from './TwitchPlayerOptions';
-import { Quality } from '../model/Quality';
 
 /**
  * A TS wrapper for the Twitch interactive media player.
@@ -27,19 +28,27 @@ export class TwitchPlayer {
    * @param options The player options.
    * @constructor Creates a new TwitchPlayer instance.
    */
-  public static FromOptions(divId: string, options: TwitchPlayerOptions): TwitchPlayer {
+  public static FromOptions(
+    divId: string,
+    options: TwitchPlayerOptions
+  ): TwitchPlayer {
     const twitchPlayer = new this();
     try {
       if ((<any>window).Twitch && (<any>window).Twitch.Player) {
         twitchPlayer._player = new (<any>window).Twitch.Player(divId, options);
       } else {
-        console.warn('Player was created using the static file, from inside the package. ' +
-          'Please add the Twitch.Embed script to *index.html*, if you want to download the script directly from Twitch.');
+        console.warn(
+          'Player was created using the static file, from inside the package. ' +
+            'Please add the Twitch.Embed script to *index.html*, if you want to download the script directly from Twitch.'
+        );
         twitchPlayer._player = new Player(divId, options);
       }
     } catch (e) {
-      console.exception('Player was created using the static file, from inside the package. ' +
-        'Please add the Twitch.Player script to *index.html*, if you want to download the script directly from Twitch.', e);
+      console.exception(
+        'Player was created using the static file, from inside the package. ' +
+          'Please add the Twitch.Player script to *index.html*, if you want to download the script directly from Twitch.',
+        e
+      );
       twitchPlayer._player = new Player(divId, options);
     }
     return twitchPlayer;

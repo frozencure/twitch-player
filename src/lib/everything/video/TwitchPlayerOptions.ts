@@ -2,7 +2,6 @@
  * Interface that holds all the TwitchPlayer initialization options.
  */
 export interface TwitchPlayerOptions {
-
   /**
    * Channel name, for a live stream.
    * If channel is specified along with video and/or collection, only channel is used.

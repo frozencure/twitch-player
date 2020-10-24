@@ -12,5 +12,5 @@ export enum TwitchEmbedLayout {
    * Default if channel is not provided.
    * Shows only the video player (omits chat).
    */
-  VIDEO = 'video'
+  VIDEO = 'video',
 }

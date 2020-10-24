@@ -9,7 +9,6 @@ import { TwitchPlayerEvent } from './video/TwitchPlayerEvent';
  * A TS wrapper for the Twitch interactive media player, that can also include the chat.
  */
 export class TwitchEmbed {
-
   /**
    * The div HTML element where the player will appear.
    */
@@ -44,19 +43,23 @@ export class TwitchEmbed {
       if ((<any>window).Twitch && (<any>window).Twitch.Embed) {
         this._embed = new (<any>window).Twitch.Embed(divId, options);
       } else {
-        console.warn('Player was created using the static file from inside the package. ' +
-          'Please add the Twitch.Embed script to *index.html*, if you want to download the script directly from Twitch');
+        console.warn(
+          'Player was created using the static file from inside the package. ' +
+            'Please add the Twitch.Embed script to *index.html*, if you want to download the script directly from Twitch'
+        );
         this._embed = new Embed(divId, options);
       }
       this._player = TwitchPlayer.FromPlayer(this._embed.getPlayer());
     } catch (e) {
       this._embed = new Embed(divId, options);
       this._player = TwitchPlayer.FromPlayer(this._embed.getPlayer());
-      console.exception('Player was created using the static, packaged file. ' +
-        'Please add the Twitch.Embed script to *index.html*, if you want to download the script directly from Twitch.', e);
+      console.exception(
+        'Player was created using the static, packaged file. ' +
+          'Please add the Twitch.Embed script to *index.html*, if you want to download the script directly from Twitch.',
+        e
+      );
     }
   }
-
 
   /**
    * Adds an event listener for the given event.
@@ -69,7 +72,6 @@ export class TwitchEmbed {
   ): void {
     this._embed?.addEventListener(event.toString(), callback);
   }
-
 
   /**
    * Disables the captions for the content that is currently playing.
@@ -270,6 +272,4 @@ export class TwitchEmbed {
   public isPaused(): boolean {
     return this._embed.isPaused();
   }
-
-
 }

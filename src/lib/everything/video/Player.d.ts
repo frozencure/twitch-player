@@ -1,9 +1,9 @@
 import { PlaybackStatistics } from '../model/PlaybackStatistics';
-import { TwitchPlayerOptions } from './TwitchPlayerOptions';
 import { Quality } from '../model/Quality';
 
-export class Player {
+import { TwitchPlayerOptions } from './TwitchPlayerOptions';
 
+export class Player {
   constructor(divId: string, options: TwitchPlayerOptions);
 
   /**

@@ -1,10 +1,9 @@
-import { PlaybackStatistics } from './model/PlaybackStatistics';
 import { TwitchEmbedOptions } from './TwitchEmbedOptions';
-import { Player } from './video/Player';
+import { PlaybackStatistics } from './model/PlaybackStatistics';
 import { Quality } from './model/Quality';
+import { Player } from './video/Player';
 
 export class Embed {
-
   constructor(divId: string, options: TwitchEmbedOptions);
 
   /**
@@ -97,7 +96,7 @@ export class Embed {
    * Seeks to the specified timestamp (in seconds) in the video and resumes playing if paused. Does not work for live streams.
    * @param timestamp The specified timestamp (in seconds).
    */
-  seek(timestamp: number): void
+  seek(timestamp: number): void;
 
   /**
    * Sets the channel to be played.
@@ -158,5 +157,4 @@ export class Embed {
    * @param callback The logic that should happen when the listener fires.
    */
   addEventListener(event: string, callback: () => void): void;
-
 }

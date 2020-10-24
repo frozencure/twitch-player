@@ -5,7 +5,6 @@ import { TwitchEmbedTheme } from './TwitchEmbedTheme';
  * Interface that holds all the Twitch.Embed initialization options.
  */
 export interface TwitchEmbedOptions {
-
   /**
    * Channel name, for a live stream.
    * If channel is specified along with video and/or collection, only channel is used.

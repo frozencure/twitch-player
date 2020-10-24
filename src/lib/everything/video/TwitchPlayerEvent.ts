@@ -41,5 +41,5 @@ export enum TwitchPlayerEvent {
   /**
    * Player is ready to accept function calls.
    */
-  READY = 'ready'
+  READY = 'ready',
 }
