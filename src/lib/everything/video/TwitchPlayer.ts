@@ -30,7 +30,7 @@ export class TwitchPlayer {
   public static FromOptions(divId: string, options: TwitchPlayerOptions): TwitchPlayer {
     const twitchPlayer = new this();
     try {
-      if ((<any>window).Player && (<any>window).Twitch.Player) {
+      if ((<any>window).Twitch && (<any>window).Twitch.Player) {
         twitchPlayer._player = new (<any>window).Twitch.Player(divId, options);
       } else {
         console.warn('Player was created using the static file, from inside the package. ' +
