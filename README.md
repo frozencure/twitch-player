@@ -1,5 +1,7 @@
 # twitch-player
 
+![npm-version](https://img.shields.io/npm/v/twitch-player) ![npm-installs](https://img.shields.io/npm/dm/twitch-player?logo=npm) ![last-commit](https://img.shields.io/github/last-commit/frozencure/twitch-player) ![license](https://img.shields.io/github/license/frozencure/twitch-player)
+
 # About
 
 *twitch-player* is a Typescript `npm` package that provides an easy interaction with the
