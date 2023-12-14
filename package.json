@@ -4,7 +4,6 @@
   "description": "A Typescript wrapper for the Twitch embeddable, interactive media player.",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
-  "module": "build/module/index.js",
   "repository": "https://github.com/frozencure/twitch-player",
   "license": "MIT",
   "keywords": [
